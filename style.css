@@ -1,0 +1,81 @@
+:root {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'Figtree', sans-serif;
+}
+
+* {
+    font-size: 1rem;
+    color: #303030;
+}
+
+input, button {
+    outline: none;
+    padding: .25rem .5rem;
+    border: 1px solid #cecece;
+    border-radius: .3rem;
+}
+button {
+    cursor: pointer;
+}
+button:active {
+    background: #fff;
+}
+
+
+.text-muted {
+    font-size: .75rem;
+    color: #8b8b8b;
+    font-weight: bold;
+}
+.text-header {
+    font-size: 1.25rem;
+    color: #000;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #cecece;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: .5rem;
+}
+.card .card_header {
+    padding: .75rem;
+}
+.card .card_body {
+    padding: .75rem;
+}
+
+.list_item {
+    padding: .5rem;
+    border: 1px solid #cecece;
+    border-radius: .3rem;
+    margin-bottom: .5rem;
+    transition: all .1s ease-in;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+}
+.list_item:last-child {
+    margin-bottom: 0;
+}
+
+.action_container {
+    margin-top: .5rem;
+    display: flex;
+}
+.action_container input {
+    display: inline-block;
+    width: 1px;
+    flex-grow: 1;
+    margin-right: .5rem;
+}
+.action_container button{
+    width: fit-content;
+}
