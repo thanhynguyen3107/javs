@@ -24,10 +24,21 @@ const store = pull();
 render(store);
 
 const btnAdd = document.getElementById("btnAdd");
-btnAdd.addEventListener("click", (e) => {
+btnAdd.addEventListener("click", () => {
     const input = document.getElementById("input");
+    if(!input.value) {
+        return;
+    }
+
     store.push(input.value);
     render(store);
     commit(store);
-    input.value = "";
-})
+    input.value = ""; 
+});
+
+const btnClear = document.getElementById("btnClear");
+btnClear.addEventListener("click", () => {
+    store.splice(0);
+    render(store);
+    commit(store);
+});

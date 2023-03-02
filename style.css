@@ -51,6 +51,11 @@ button:active {
 .card .card_body {
     padding: .75rem;
 }
+.card .card_footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: .75rem;
+}
 
 .list_item {
     padding: .5rem;

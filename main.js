@@ -619,7 +619,7 @@ các loại function
 // alert(fullName);
 // console.log(typeof fullName);
 
-// var fullName = 'Thanh Y la \'Sieu Nhan\''
+var fullName = 'Thanh Y la \'Sieu Nhan\''
 // console.log(fullName.length);
 
 // var firstName = 'Thanh';
@@ -737,7 +737,7 @@ Keyword: Javscrpit number methods( nhớ tìm kiếm)
 //  var age = 18;
 //  var PI = 3.14;
 
-//  console.log(PI.toPrecision())
+//  console.log(PI.toPrecision()) làm tròn chuyển đổi thành chuổi
 //  console.log(age.toString()) //chuyển đổi thành chuỗi
 
 //  console.log(typeof age.toString()) // kiểm tra data type
@@ -852,7 +852,7 @@ Keyword: Javscrpit number methods( nhớ tìm kiếm)
 
 // console.log(languaes);
 // console.log(typeof languaes);
-// // để kiểm tra  có đúng là 1 Array hay không thì sẽ làm như  sau 
+//  để kiểm tra Object có đúng là 1 Array hay không thì sẽ làm như  sau 
 // console.log(Array.isArray(languaes));
 
 // console.log(languaes.length); // lấy độ dài mảng
@@ -876,17 +876,17 @@ Javscript array metho
 
 */
 
-var languaes = [
-      'Javascript',
-      'PHP',
-      'Ruby',
-];
+// var languages = [
+//       'Javascript',
+//       'PHP',
+//       'Ruby',
+// ];
 
-// console.log(languaes.toString()) //chuyển đổi Arry sang chuỗi To string
+// console.log(languages.toString()) //chuyển đổi Arry sang chuỗi To string
 
 // console.log(typeof languaes.toString()) 
 
-// console.log(languaes.join(', ')); // chuyển 1 Arry sang chuỗi và thêm giá trị để tình bày Join
+// console.log(languages.join(', ')); // chuyển 1 Arry sang chuỗi và thêm giá trị để tình bày Join
 
 // console.log(languaes.pop()); // xóa đi element( phần tử) cuối mảng và trả về phần tử đã xóa
 
@@ -901,7 +901,7 @@ var languaes = [
 // console.log(languaes);
 
 
-// console.log(languaes.shift('fsdsf')) // xóa đi element đầu tiêng của mảng trả về element đã xóa
+// console.log(languaes.shift()) // xóa đi element đầu tiêng của mảng trả về element đã xóa
 
 // console.log(languaes); // giống như pop ở trên
 
@@ -909,7 +909,117 @@ var languaes = [
 
 // console.log(languaes);
 
-languaes.splice(1,0,'Dart');// 1 đặt vị trí, từ viA thứ nhất muốn xóa đi mấy element, 
-                              // và chèn vào tại vị trí được đặt
+// languages.splice(1,1,'Dart');// 1 đặt vị trí, từ vị trí  thứ nhất muốn xóa đi mấy element, 
+//                               // và chèn vào tại vị trí được đặt
       
-console.log(languaes);
+// console.log(languages);
+
+// var languages1 = 
+//       'Dart',
+//       'Ruby',
+// ];
+// // console.log(languages.concat(languages1)); // nối mảng lại với nhau 
+
+// console.log(languages1.slice(0,1)); // cắt lấy 1 vài element
+
+// Bài tập array ****
+// Viết hàm tại đây
+
+// function getLastElement(array) {
+//        return array.slice(-1)   //cách 1
+//       return array[array.length-1] //cách 2
+      
+//       }
+      
+      
+//       // Ví dụ sử dụng
+//       var animals = ['Monkey', 'Tiger', 'Elephant'];
+//       var result = getLastElement(animals);
+      
+//       console.log(result); // Expected: "Elephant"
+//       console.log(animals); // Expected: ['Monkey', 'Tiger', 'Elephant']
+
+
+
+// Object trong Javascript
+
+// var emailKey = 'email1';
+
+// var myInfo = {
+//       name: 'Thành Ý',
+//       age: 18,
+//       address: 'Ca Mau, VN',
+//       [emailKey]: 'thanhyidol98@gmail.com123', // cách thêm 1 key vào trong Object 
+//       getName: function() {
+//             return this.name;                   // this là tên biến ở đây this là myInfo
+//       }
+// };
+
+
+
+//Function --> phương thứ / method
+//Others ---> thuộc tính / property
+
+
+// myInfo.email = 'thanhyidol98@gmail.com'; //cách thêm 1 key & value
+// myInfo ['my-email'] = 'thanhyidol98@gmail.com111';// cách thêm 1 key & value 2
+
+
+// var myKey = 'address';
+
+// console.log(myInfo.name);// cách lấy 1 key và value log ra
+
+// console.log(myInfo['address']);// cách lấy 1 key và value log ra 2
+
+// console.log(myInfo['my-email']);// cách lấy 1 key và value log ra 2
+
+// console.log(myInfo[myKey]); // dùng cách thứ 2 truyền value dưới dạng biến
+
+// delete myInfo.age;
+
+// console.log(myInfo);
+
+// console.log( myInfo.getName());
+
+
+
+// Object constructor ( xây dựng đổi tượng)
+
+function User(firstName, lastName, avatar) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.avatar = avatar;
+      this.getName = function() {
+            return `${this.firstName} ${this.lastName}`
+            // return this.firstName + " " + this.lastName;
+      }
+}
+ var author = new User('Sơn', 'Đặng', 'Avatar');
+ var user = new User('Vũ', 'Nguyễn', 'Avatar');
+
+// console.log(author.constructor);
+
+author.title = 'Chia sẽ dạo tại F8';
+user.comment = 'liệu có khóa asp.net k ad ';
+
+
+console.log(author.getName());
+console.log(user.getName());
+
+
+// // Constructor
+
+/*sau này đối tượng được khởi tạo từ bản thiết kế này thì sẽ có thuộc tính là firstName = với tham số
+firstName truyền vào khi khởi tạo đối tượng và 2 ông còn lại cũng như vậy
+*/
+
+// function User(firstName, lastName, avt ) {
+//       // this: mô tả những thuộc tính và phương thức sẽ có cho đối tượng khi khởi tạo Object constructor
+//       this.firstName = firstName;
+//       this.lastName = lastName;
+//       this.avt = avt;
+  
+//       this.getName = function () {
+//           // this: đối tượng hiện thời của lớp đấy, nghĩa là đối tượng nào đang được gọi thì this chính là đối tượng đấy 
+//           return `${this.firstName} ${this.lastName}`;
+//       }
