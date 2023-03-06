@@ -796,7 +796,7 @@ Keyword: Javscrpit number methods( nhớ tìm kiếm)
   
   
   
-//   // Expected results:
+// //   Expected results:
 //   console.log(isNumber(999)); // true
 //   console.log(isNumber('abc')); // false
 //   console.log(isNumber('100')); // false
@@ -809,20 +809,18 @@ Keyword: Javscrpit number methods( nhớ tìm kiếm)
 
 
 
-// //  cách 2 ***
+//   cách 2 ***
 // function isNumber(value){
-//   return typeof value === 'number' &&  !isNaN(value) 
+//   return typeof value === 'number' &&  isNaN(value) 
  
  
- 
- 
-//  // Expected results:
-// //  console.log(isNumber(0)); // true
-// //  console.log(isNumber('abc')); // false
-// //  console.log(isNumber('100')); // false
- 
-//  console.log(isNumber(NaN)); // false
-// //  console.log(isNumber(100 / 'abc')); // false
+//  Expected results:
+//   console.log(isNumber(999)); // true
+//   console.log(isNumber('abc')); // false
+//   console.log(isNumber('100')); // false
+  
+//   console.log(isNumber(NaN)); // false
+//   console.log(isNumber(100 / 'abc')); // false
 
  
 /* Mảng trong Javascript - Array ****
@@ -914,20 +912,20 @@ Javscript array metho
       
 // console.log(languages);
 
-// var languages1 = 
+// var languages1 = [
 //       'Dart',
 //       'Ruby',
 // ];
 // // console.log(languages.concat(languages1)); // nối mảng lại với nhau 
 
-// console.log(languages1.slice(0,1)); // cắt lấy 1 vài element
+// console.log(languages1.slice(0,1,)); // cắt lấy 1 vài element
 
 // Bài tập array ****
 // Viết hàm tại đây
 
 // function getLastElement(array) {
 //        return array.slice(-1)   //cách 1
-//       return array[array.length-1] //cách 2
+//       // return array[array.length-1] //cách 2
       
 //       }
       
@@ -985,36 +983,37 @@ Javscript array metho
 
 // Object constructor ( xây dựng đổi tượng)
 
-function User(firstName, lastName, avatar) {
-      this.firstName = firstName;
-      this.lastName = lastName;
-      this.avatar = avatar;
-      this.getName = function() {
-            return `${this.firstName} ${this.lastName}`
-            // return this.firstName + " " + this.lastName;
-      }
-}
- var author = new User('Sơn', 'Đặng', 'Avatar');
- var user = new User('Vũ', 'Nguyễn', 'Avatar');
+// function User(firstName, lastName, avatar) {
+//       this.firstName = firstName;
+//       this.lastName = lastName;
+//       this.avatar = avatar;
+//       this.getName = function() {
+//             return `${this.firstName} ${this.lastName}`
+//             // return this.firstName + " " + this.lastName;
+//       }
 
-// console.log(author.constructor);
+// }
+//  var author = new User('Sơn', 'Đặng', 'Avatar');
+//  var user = new User('Vũ', 'Nguyễn', 'Avatar');
 
-author.title = 'Chia sẽ dạo tại F8';
-user.comment = 'liệu có khóa asp.net k ad ';
+// // console.log(author.constructor);
 
+// author.title = 'Chia sẽ dạo tại F8';
+// user.comment = 'liệu có khóa asp.net k ad ';
 
-console.log(author.getName());
-console.log(user.getName());
+//  console.log(author.getName());
+//  console.log(user.getName());
+// console.log(author)
+  
 
-
-// // Constructor
+//  Constructor
 
 /*sau này đối tượng được khởi tạo từ bản thiết kế này thì sẽ có thuộc tính là firstName = với tham số
 firstName truyền vào khi khởi tạo đối tượng và 2 ông còn lại cũng như vậy
 */
 
 // function User(firstName, lastName, avt ) {
-//       // this: mô tả những thuộc tính và phương thức sẽ có cho đối tượng khi khởi tạo Object constructor
+//       // this: mô tả những thuộc tính và phương thức sẽ có cho đối tượng khi khởi tạo  từ Object constructor
 //       this.firstName = firstName;
 //       this.lastName = lastName;
 //       this.avt = avt;
@@ -1023,3 +1022,358 @@ firstName truyền vào khi khởi tạo đối tượng và 2 ông còn lại c
 //           // this: đối tượng hiện thời của lớp đấy, nghĩa là đối tượng nào đang được gọi thì this chính là đối tượng đấy 
 //           return `${this.firstName} ${this.lastName}`;
 //       }
+
+
+// bài tập **********************
+// function Animal(name,leg,speed) {
+//       this.name = name;
+//       this.leg = leg;
+//       this.speed = speed;
+      
+//   }
+  
+//   var parrot = new Animal ('vẹt', 2, 120);
+  
+//   console.log(parrot);
+
+/* Hãy tạo object constructor cho nhóm Animal có 3 thuộc tính là name, leg và speed. Trong đó, name là để lưu tên động vật, leg là số lượng chân và speed là tốc độ di chuyển của động vật đó.
+
+Sau đó, hãy tạo một đối tượng từ object constructor trên để mô tả 1 con vẹt, lưu đối tượng vào biến parrot.
+
+ Tên và tốc độ di chuyển của vẹt các bạn có thể tùy ý đặt, không đòi hỏi phải chính xác với tên và tốc độ trong thực tế.
+ */
+
+
+
+ /*
+      Object prototype (nguyên mẫu đối tượng) - Bassic
+      
+      1. Prototype là gì? nguyên liệu cấu tạo
+      2. Sử dụng khi nào? thêm 1 thuộc tính hoặc phương thức cho bản thiết kế
+*/
+// function User(firstName, lastName, avatar) {
+//       this.firstName = firstName;
+//       this.lastName = lastName;
+//       this.avatar = avatar;
+//       this.getName = function() {
+//             return `${this.firstName} ${this.lastName}`
+//             // return this.firstName + " " + this.lastName;
+//       }
+// }
+//       User.prototype.className = 'F8'
+//       User.prototype.getClassName = function() {
+//             return this.className;
+//       }
+//       var user = new User('Sơn', 'Đặng', 'Avatar1');
+//       var user2 = new User('Tân', 'Đặng', 'Avatar2');
+
+//       console.log(user.className)
+//       console.log(user2.getClassName())
+//       console.log(user)
+//       console.log(user.constructor === User)
+//       console.log(User.prototype.constructor === User)
+
+/*tất cả phương thức hoặc thuộc tính được thêm bằng prototype qua 1 hàm tạo
+của 1 hàm tạo của 1 hàm tạo thì nó sẽ nằm trong phần prototype khi log ra.
+
+
+//  User.prototype.getClassName = function() {
+            return this.className;
+chỉ khi nó là phương thức thì mới có thể truy cập qua this để lấy được 
+*/
+
+
+
+// Bài tập prototype *********************
+// function Student(firstName,lastName) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+   
+// }
+// Student.prototype.getFullName = function() {
+//      return `${this.firstName} ${this.lastName}`
+// }
+
+
+// // Ví dụ khi sử dụng
+// var student = new Student('Long', 'Bui');
+
+
+// console.log(student.firstName);  // 'Long'
+// console.log(student.lastName);  // 'Bui'
+// console.log(student.getFullName());  // 'Long Bui'
+
+
+/* Để vượt qua thử thách này, bạn hãy tạo một object constructor Student gồm: firstName, lastName. Sau đó, định nghĩa thêm phương thức là getFullName, phương thức này sẽ trả về tên đầy đủ của sinh viên.
+
+Giữa firstName và lastName cần có 1 khoảng trắng (1 dấu space).
+*/
+
+
+// Đối tượng Date
+
+// var date = new Date();
+
+// var year = date.getFullYear();
+// var month = date.getMonth()+1; // lấy tháng +1 thêm 1 để dễ nhìn
+// var day = date.getDate();
+
+// console.log(date);
+// console.log(`${day}/${month}/${year}`);
+
+
+
+// function getNextYear() { 
+//       var date = new Date();
+//      return date.getFullYear() +1
+      
+//   }
+
+/* bài tập đối tượng Date ****
+Để vượt qua thử thách này, bạn hãy tạo hàm getNextYear, 
+hàm này sẽ trả về năm kế tiếp. Ví dụ, năm nay là 2022, hàm sẽ trả về 2023 là kiểu số.
+*/
+
+
+/*
+Math object
+
+- Math.Pi         trả về số pi chi tiết 
+- Math.round()    
+- Math.abs()
+- Math.ceil()
+- Math.floor()
+- Math.random()
+- Math.min()
+- Math.max()
+
+*/
+
+// console.log(Math.round(1.5)) // từ 1 đến 1.49 làm tròn xuống, trên thì làm tròn lên
+
+// console.log(Math.abs(-4))  // trả về giá trị tuyệt đối số âm thành số dương
+
+// console.log(Math.ceil(4.11))  // làm tròn trên dù giá trị có nhỏ bao nhiêu
+
+// console.log( Math.floor(4.999))  // làm tròn xuống dù giá trị có nhỏ bao nhiêu
+
+// console.log( Math.random())  // trả về số thập phân ngẫu nhiên nhỏ hơn 1
+
+// console.log(Math.floor(Math.random() * 10)); // làm tròn xuống 1 số ngẫu nhiên nhỏ hơn 1
+
+// console.log(Math.max(-100, 1, 90, 50, 400)); // lấy ra con số lớn nhất
+// console.log(Math.min(-100, 1, 90, 50, 400)) // lấy ra con số nhỏ nhất
+
+
+// var random = Math.floor(Math.random() * 5);
+
+// var bonus = [
+//       '10 coin',
+//       '20 coin',
+//       '30 coin',
+//       '40 coin',
+//       '50 coin',
+// ];
+
+// console.log(bonus[random]); // chạy ngẫu nhiên  mảng bounus *****
+
+
+// var random = Math.floor(Math.random() * 100);
+
+// if (random<20) {
+//       alert('Anh Khoa Sài Bằng Giả');
+// }
+
+
+/*
+tạo ra ra hàm random giá trị bằng o đến 99 đặt điều kiện if random trả ra nhỏ hơn 20 thì
+ thông báo kêt quả
+ */
+
+
+
+
+ // bài tập *****
+
+//  function getRandomItem(Array){
+//       var random = Math.floor(Math.random() * Array.length);
+//       return Array[random];
+//   }
+  
+//   var main = getRandomItem([1,56,8,9,1,78,])
+//   console.log(main)
+
+//  Hãy tạo hàm getRandomItem, hàm này nhận 1 tham số là mảng và sẽ trả về ngẫu nhiên 1 phần tử của mảng.
+
+
+
+
+/* Lệnh Rẽ nhánh toán tử 3 ngôi */
+
+//  Câu lệnh rẽ nhánh - If else
+
+//  trong câu điều if - else luôn luôn chỉ lọt vào 1 nhánh đầu tiền nó thấy đúng và k check nhánh còn lại!
+
+
+
+// var date = 3;
+
+// if (date === 2) {
+//       console.log( 'Hôm nay là thứ 2')
+// }else if (date === 3) {
+//       console.log( 'Hôm nay là thứ 3')
+// }else if (date === 4) {
+//       console.log( 'Hôm nay là thứ 4')
+// }else {
+//       console.log('không biết')
+// }
+
+// Bài tập *******
+
+// Để vượt qua thử thách này, hãy hoàn thành hàm cho trước để đáp ứng các yêu cầu sau:
+
+// Khi a chia hết cho 3 thì return về 1
+// Khi a chia hết cho 5 thì return về 2
+// Khi a chia hết cho 15 thì return về 3
+
+
+
+// function run(a) {
+//       if(a % 15=== 0) {
+//           return 3;
+//       } else if(a % 5 === 0) {
+//           return 2;
+//       } else if(a % 3 === 0) {
+//           return 1;
+//       }
+//   }
+  
+  
+//   // Kỳ vọng
+//   console.log(run(3)) // 1
+//   console.log(run(5)) // 2
+//   console.log(run(15)) // 3
+
+
+// Câu lệnh rẽ nhánh - Switch 
+
+/* Trong câu điều kiện Switch tính từ case đúng đầu tiên nó sẽ lọt vào tất cả case sau đó đều đúng nếu
+không sử dụng break ***** break cắt đứt tất cả trong mọi trường hợp
+*/ 
+
+
+// var date = 2;
+
+// switch(date) {
+//       case 2: 
+//       case 3: /// === sử dụng toán tử 3 dấu bằng để so sánh giá trị
+//       case 4: 
+//       console.log('Hôm nay là thứ 2,3,4');
+//       // break;
+//       case 5: 
+//       console.log('Hôm nay là thứ 5');
+//       // break;
+
+//       default:
+//             console.log('Anh khoa sài bằng giả'+' '+ 'không biết!');
+// }
+
+
+
+// // var date = 7;
+
+// // if (date === (2,3,4))  {
+// //       console.log('không biết')
+// // }else if (date === 5){
+// //  console.log(123);
+// // }else if(date > 5) {
+// //       console.log('anh là vô địch')
+// }
+
+/* khi nào dùng do sánh đúng sai thì dùng if - else, còn khi nào có giá trị cho trước thì dùng switch
+với điều kiện số case sẽ phải lớn hơn 3 để phù hợp nhỏ hơn thì vẫn dùng if - else
+*/
+
+
+// function run(fruits) {
+//       var result;
+  
+//      switch (fruits) {
+//           case "Banana":
+//               result = "This is a Banana";
+//             //   break;
+//           case "Apple":
+//               result = "This is an Apple";
+//               break;
+//               default:
+//                    result = 'anh là vô địch'
+//       }
+  
+//       return result;
+//   }
+
+//   console.log(run("Banana"));
+
+/*
+Hoàn thành code còn thiếu #2 Bài tập *****
+
+Cho trước một đoạn mã bị thiếu phần switch case, hãy bổ sung để hoàn thiện đoạn mã.
+
+Chỉ bổ sung phần còn thiếu, không thay đổi code có sẵn nhé các bạn.
+*/
+
+// Toán tử 3 ngôi - Ternary operator 
+
+// var course = {
+//       name: 'Javascript',
+//       coin: 250,
+// }
+
+// if ( course.coin > 0 ) {
+//       console.log(`${course.coin} coin`)
+// }else {
+//       console.log('Miễn phí');
+// } 
+
+
+
+// var result = course.coin > 0 ? `${course.coin} coin`: 'Miễn phí'; 
+
+//  nếu biến course.coin > 0 thì sẽ in ra `${course.coin} coin` và course.coin = 0 thì in ra miễn phí
+
+// console.log(result);  
+
+
+// var a = 1;
+// var b = 2;
+
+// var c = a > 0 ? `${a} và ${b} > 0`: b;
+
+// console.log(c);
+
+// lưu ý chỉ dùng trường hợp đơn giản nếu phức tạp thì dùng if else
+
+
+
+
+/* Bài Tập *****
+Để vượt qua thử thách này bạn cần tạo hàm getCanVoteMessage, hàm này có 1 tham số là age. Trong trường hợp từ 18 tuổi trở lên hàm sẽ trả về Bạn có thể bỏ phiếu, ngược lại hàm trả về Bạn chưa được bỏ phiếu.
+
+Sử dụng toán tử 3 ngôi trong bài này, không sử dụng if/else bạn nhé.
+*/
+
+// function getCanVoteMessage(age){
+//       var result = age >= 18 ? "Bạn có thể bỏ phiếu":  "Bạn chưa được bỏ phiếu";
+  
+//       return result;
+//   }
+  
+  
+  
+//   // Kỳ vọng
+//   console.log(getCanVoteMessage(18)) // 'Bạn có thể bỏ phiếu'
+//   console.log(getCanVoteMessage(15)) // 'Bạn chưa được bỏ phiếu'
+
+
+
+
